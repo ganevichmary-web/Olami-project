@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игры в браузере — играть сейчас</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <h1>ИГРЫ В БРАУЗЕРЕ</h1>
+        <p class="subtitle">Нет ничего проще. Заходи и играй. Никаких скачиваний, установок и регистраций.</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <h2>Играть просто!</h2>
+            <p>Откройте любую игру из списка ниже и начните играть прямо сейчас.</p>
+            
+            <p class="quote">"Никогда не давай страху поражения удержать тебя от игры."</p>
+            
+            <!-- Игровой контейнер (изначально скрыт) -->
+            <div id="game-container"></div>
+            
+            <h2 id="games-list-title">Доступные игры</h2>
+            <ul class="game-list" id="games-list">
+                <li data-game="tictactoe">
+                    <div class="game-link">Крестики-нолики</div>
+                    <div class="description">Классическая игра для двух игроков на одном устройстве</div>
+                </li>
+                <li data-game="snake">
+                    <div class="game-link">Змейка</div>
+                    <div class="description">Контролируйте змейку, собирайте еду, избегайте стен</div>
+                </li>
+                <li data-game="tetris">
+                    <div class="game-link">Тетрис</div>
+                    <div class="description">Собирайте линии из падающих фигур</div>
+                </li>
+                <li data-game="pong">
+                    <div class="game-link">Понг</div>
+                    <div class="description">Классический арканоид с физикой отскока</div>
+                </li>
+                <li data-game="minesweeper">
+                    <div class="game-link">Сапёр</div>
+                    <div class="description">Разминируйте поле, не подорвавшись на минах</div>
+                </li>
+            </ul>
+            
+            <div class="instructions">
+                <h3>Как играть</h3>
+                <p>1. Выберите игру из списка выше</p>
+                <p>2. Нажмите на название игры</p>
+                <p>3. Играйте с помощью клавиатуры или мыши</p>
+                <p>4. Для паузы нажмите ESC, для перезапуска — F5</p>
+            </div>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Наши преимущества:</h2>
+            <ul class="feature-list">
+                <li>Без регистрации. Вообще.</li>
+                <li>Никаких платных подписок.</li>
+                <li>Игры работают на любом устройстве.</li>
+                <li>Не требуется мощный компьютер.</li>
+                <li>Мы не собираем ваши данные.</li>
+                <li>Без рекламы</li>
+                <li>Бесплатно. Всегда.</li>
+            </ul>
+            
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <div class="faq-question">Вопрос: Нужно ли регистрироваться, чтобы играть?</div>
+                <div class="faq-answer">Ответ: Нет, для большинства игр регистрация не требуется. Просто заходите на сайт, выбираете игру и начинаете играть.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Вопрос: Правда, что игры бесплатные?</div>
+                <div class="faq-answer">Ответ: Да, абсолютно все игры на нашем сайте бесплатны.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Вопрос: Нужно ли что-то скачивать или устанавливать?</div>
+                <div class="faq-answer">Ответ: Нет! Это главное преимущество браузерных игр. Они работают прямо в вашем браузере.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Вопрос: На каком устройстве можно играть?</div>
+                <div class="faq-answer">Ответ: На любом устройстве с современным браузером: ПК, ноутбук, планшет, смартфон. Для некоторых игр на телефоне может понадобиться клавиатура или мышь.</div>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- Экран окончания игры (используется для Змейки) -->
+    <div id="snake-game-over" style="display: none;">
+        <h2>ИГРА ОКОНЧЕНА!</h2>
+        <p id="snake-final-score">Очки: 0</p>
+        <p>Нажмите R или пробел для перезапуска</p>
+        <div class="game-actions">
+            <button onclick="window.snakeGame && window.snakeGame.restart()">Играть снова</button>
+            <button onclick="showSnakeInstructions()">Как играть?</button>
+            <button onclick="hideGame()">Вернуться к списку игр</button>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 Игры в браузере. Все игры написаны с нуля специально для этого сайта.</p>
+        <p>Это не коммерческий проект. Это просто игры в браузере.</p>
+        <p>Дизайн в светлых голубых тонах для комфортной игры</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/tictactoe.js"></script>
+    <script src="js/snake.js"></script>
+    <script src="js/tetris.js"></script>
+    <script src="js/pong.js"></script>
+    <script src="js/minesweeper.js"></script>
+</body>
+</html>
